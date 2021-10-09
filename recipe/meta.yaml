@@ -1,5 +1,5 @@
 {% set name = "yaqd-ti" %}
-{% set version = "2021.3.0" %}
+{% set version = "2021.10.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-ti-{{ version }}.tar.gz
-  sha256: 04131dfff63366942ee02c8d0e1c5bc64582eab07d9be6a35166e24c09a0bced
+  sha256: b893782ff53d08b22fde9150801f575686d3b188d0361b04e573fbbfb33a64c6
 
 build:
   number: 0
