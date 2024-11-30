@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-ti-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yaqd-ti-{{ version }}.tar.gz
   sha256: b893782ff53d08b22fde9150801f575686d3b188d0361b04e573fbbfb33a64c6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - yaqd-ads1115 = yaqd_ti._ads1115:ADS1115.main
@@ -19,13 +19,13 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit
     - yaqd-core >=2021.3.0
     - smbus2
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - yaqd-core >=2021.3.0
     - smbus2
 
@@ -37,6 +37,7 @@ test:
     - yaqd-ads1115 --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
